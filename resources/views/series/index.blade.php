@@ -12,13 +12,13 @@
     <ul class='list-group'>
         @foreach($series as $serie)
             <li
-                class="list-group-item">{{ $serie->nome }}
+                class="list-group-item d-flex justify-content-between align-items-center ">{{ $serie->nome }}
 
                 <form method="post" action="/series/remove/{{$serie->id}}"
                 onsubmit="return confirm('Tem certeza que deseja remover {{addslashes($serie->nome)}}?')">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger">Excluir</button>
+                    <button class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> </button>
                 </form>
             </li>
     </ul>
